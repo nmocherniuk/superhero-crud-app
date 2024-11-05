@@ -1,0 +1,14 @@
+{
+  "name": "superhero-backend",
+  "version": "1.0.0",
+  "description": "A backend API for managing superhero data, including CRUD operations for superhero profiles with details, powers, and images.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nazar Mocherniuk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
