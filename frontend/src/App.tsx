@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./pages/Home";
+import ErrorPage from "./pages/Error";
+import RootLayout from "./pages/Root";
+import SuperheroesPage from "./pages/Superheroes";
+import NewSuperheroPage from "./pages/NewSuperhero";
+import SuperheroDetailPage from "./pages/SuperheroDetail";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    id: "root",
+    children: [
+      { index: true, element: <HomePage /> },
+      {
+        path: "superheroes",
+        children: [
+          { index: true, element: <SuperheroesPage /> },
+          { path: ":superheroId", element: <SuperheroDetailPage /> },
+        ],
+      },
+      { path: "new-superhero", element: <NewSuperheroPage /> },
+    ],
+  },
+]);
 
+const App: React.FC = () => {
+  return <RouterProvider router={router} />;
+};
 export default App;
