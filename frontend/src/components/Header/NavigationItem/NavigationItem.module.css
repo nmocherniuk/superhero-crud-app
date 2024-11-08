@@ -1,0 +1,32 @@
+.link {
+  list-style: none;
+  font-family: "Bangers";
+  font-size: 24px;
+  position: relative;
+}
+
+.link > a {
+  text-decoration: none;
+  color: #737373;
+}
+
+.active-link > a {
+  color: #f2f2f2;
+}
+
+.link-line {
+  position: absolute;
+  transform: scaleX(0);
+  opacity: 0;
+  margin-top: 4px;
+  width: 100%;
+  transform-origin: center;
+  height: 1.5px;
+  border: 1px solid #f2f2f2;
+  transition: all 0.5s ease-out 0.05s;
+}
+
+.active-link-line {
+  opacity: 1;
+  transform: scaleX(1);
+}
