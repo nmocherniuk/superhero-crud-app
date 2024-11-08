@@ -1,0 +1,83 @@
+.home-page-bg {
+  background: linear-gradient(to bottom, #520202, #ff4d00);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.main-banner {
+  background: url("../../assets/images/superheroes-silhouettes.png") no-repeat
+    center center;
+  width: 100%;
+  height: 730px;
+  position: relative;
+}
+
+.content {
+  height: 100%;
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  padding-bottom: 28px;
+}
+
+.greeting {
+  font-family: "Marvel";
+  text-transform: uppercase;
+  font-size: 35px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  font-size: 14px;
+  color: #bababa;
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+
+.hero-button {
+  background-color: #d64304;
+  text-decoration: none;
+  color: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 29px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-bottom: 40px;
+  }
+
+  .greeting {
+    font-size: 42px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .greeting {
+    font-size: 55px;
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    max-width: 900px;
+  }
+}
