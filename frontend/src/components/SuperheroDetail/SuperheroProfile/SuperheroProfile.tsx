@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion as m } from "framer-motion";
 import ImageSlider from "../../UI/ImageSlider/ImageSlider";
-import { ActionButton, SuperheroDetailsData } from "../../../types";
+import { ActionButton, SuperheroData } from "../../../types";
 import DeleteWarningModal from "../DeleteWarningModal/DeleteWarningModal";
 import { useNavigate } from "react-router-dom";
 import ActionButtons from "../../UI/ActionButtons/ActionButtons";
@@ -9,7 +9,7 @@ import { useModal } from "../../../store/ModalContext";
 import classes from "./SuperheroProfile.module.css";
 
 interface SuperheroProfileProps {
-  superheroData: SuperheroDetailsData | null;
+  superheroData: SuperheroData | null;
 }
 
 const SuperheroProfile: React.FC<SuperheroProfileProps> = ({

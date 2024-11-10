@@ -1,10 +1,6 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { motion as m } from "framer-motion";
-import {
-  ActionButton,
-  SuperheroAttribute,
-  SuperheroDetailsData,
-} from "../../types";
+import { ActionButton, SuperheroAttribute, SuperheroData } from "../../types";
 import Input from "../UI/Input/Input";
 import ActionButtons from "../UI/ActionButtons/ActionButtons";
 import { useNavigate } from "react-router-dom";
@@ -12,14 +8,15 @@ import ImageSelection from "./ImageSelection/ImageSelection";
 import classes from "./SuperheroProfileEdit.module.css";
 
 interface SuperheroProfileEditProps {
-  initialData: SuperheroDetailsData | null;
+  initialData: SuperheroData | null;
 }
 
 const SuperheroProfileEdit: React.FC<SuperheroProfileEditProps> = ({
   initialData,
 }) => {
   const [selectedImages, setSelectedImages] = useState<number[]>([]);
-  const [superheroData, setSuperheroData] = useState<SuperheroDetailsData>({
+  const [superheroData, setSuperheroData] = useState<SuperheroData>({
+    id: 0,
     images: [],
     nickname: "",
     real_name: "",

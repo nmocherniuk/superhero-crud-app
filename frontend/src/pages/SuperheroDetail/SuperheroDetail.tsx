@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import Container from "../../components/UI/Container/Container";
-import { SuperheroDetailsData } from "../../types";
+import { SuperheroData } from "../../types";
 import SuperheroProfile from "../../components/SuperheroDetail/SuperheroProfile/SuperheroProfile";
 import { motion as m } from "framer-motion";
 import classes from "./SuperheroDetail.module.css";
 
 const SuperheroDetailPage: React.FC = () => {
-  const [dataDetail, setDataDetail] = useState<SuperheroDetailsData | null>(
-    null
-  );
+  const [dataDetail, setDataDetail] = useState<SuperheroData | null>(null);
 
   return (
     <div className={classes.background}>

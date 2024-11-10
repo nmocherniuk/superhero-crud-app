@@ -1,9 +1,9 @@
 import React from "react";
-import { SuperheroDetailsData } from "../../../types";
+import { SuperheroData } from "../../../types";
 import classes from "./ImageSelection.module.css";
 
 interface ImageSelectionProps {
-  images: SuperheroDetailsData["images"];
+  images: SuperheroData["images"];
   selectedImages: number[];
   onSelectImage: (id: number) => void;
 }
