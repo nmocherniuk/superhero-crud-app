@@ -1,22 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { motion as m, Variants } from "framer-motion";
 import Container from "../../components/UI/Container/Container";
 import classes from "./Home.module.css";
 
 const HomePage: React.FC = () => {
-  const [isAnimationComplete, setIsAnimationComplete] =
-    useState<boolean>(false);
-
-  useEffect(() => {
-    document.body.style.overflowY = isAnimationComplete ? "auto" : "hidden";
-  }, [isAnimationComplete]);
-
-  const handleAnimationComplete = (): void => {
-    setIsAnimationComplete(true);
-    document.body.style.overflowY = "auto";
-  };
-
   const bannerVariants: Variants = {
     hidden: { y: "100%", opacity: 0 },
     visible: {
@@ -32,7 +20,6 @@ const HomePage: React.FC = () => {
         initial="hidden"
         animate="visible"
         variants={bannerVariants}
-        onAnimationComplete={handleAnimationComplete}
         className={classes["main-banner"]}
       >
         <Container>
