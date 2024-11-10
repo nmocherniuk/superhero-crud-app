@@ -1,0 +1,59 @@
+.background {
+  background: linear-gradient(to left, #1d0e2e, #000000);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.magneto-image {
+  display: none;
+}
+
+.title {
+  color: #f2f2f2;
+  font-family: "Bangers";
+  font-size: 45px;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 20px 0px 12px 0px;
+}
+
+.subtitle {
+  color: #bababa;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.new-hero-form {
+  display: grid;
+  column-gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .magneto-image {
+    display: block;
+    position: absolute;
+    right: 40%;
+    top: 8%;
+    transform: translate(740px, 45px);
+    height: 730px;
+    width: auto;
+    object-fit: cover;
+  }
+
+  .new-hero-title {
+    text-align: start;
+  }
+
+  .new-hero-subtitle {
+    text-align: start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .new-hero-subtitle {
+    margin-bottom: 45px;
+  }
+}
