@@ -29,4 +29,5 @@
 
 .image-input {
   border: none;
+  align-self: flex-start;
 }

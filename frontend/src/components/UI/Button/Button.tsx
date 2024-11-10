@@ -1,16 +1,8 @@
 import React from "react";
 import classes from "./Button.module.css";
+import { ActionButton } from "../../../types";
 
-interface ButtonProps {
-  onClick?: (e: React.FormEvent) => void;
-  children: React.ReactNode;
-  bgColor: "red" | "white";
-  color: "white" | "black";
-  type?: "button" | "reset" | "submit";
-  addClasses?: string;
-}
-
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<ActionButton> = ({
   onClick,
   children,
   type,

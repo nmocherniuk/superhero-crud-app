@@ -2,8 +2,8 @@ import React from "react";
 import classes from "./Input.module.css";
 
 interface InputProps {
-  label: string;
-  id: string;
+  label?: string;
+  id?: string;
   type?: string;
   isTextArea?: boolean;
   required?: boolean;
