@@ -4,13 +4,13 @@ import { truncateText } from "../../../util/truncatedText";
 import classes from "./SuperheroItem.module.css";
 
 interface SuperheroItemProps {
-  name: string;
+  nickname: string;
   imgSrc: string;
   index: number;
 }
 
 const SuperheroItem: React.FC<SuperheroItemProps> = ({
-  name,
+  nickname,
   imgSrc,
   index,
 }) => {
@@ -26,8 +26,9 @@ const SuperheroItem: React.FC<SuperheroItemProps> = ({
       }}
       className={classes["superhero-list-item"]}
     >
-      <img src={imgSrc} alt={name} className={classes["superhero-image"]} />
-      <h3 className={classes["superhero-name"]}>{truncateText(name, 18)}</h3>
+      <img src={imgSrc} alt={nickname} className={classes["superhero-image"]} />
+      {/* <h3 className={classes["superhero-name"]}>{truncateText(name)}</h3> */}
+      <h3 className={classes["superhero-name"]}>{nickname}</h3>
     </m.li>
   );
 };

@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
   const Superheroes = sequelize.define("Superheroes", {
     nickname: {
       type: DataTypes.STRING,
-      allowNull: false, // Виправлення: allowNull замість alowNull
+      allowNull: false,
     },
     real_name: {
       type: DataTypes.STRING,

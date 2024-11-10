@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import axios from "axios";
 import { motion as m } from "framer-motion";
 import { SuperheroData } from "../../types";
 import Container from "../../components/UI/Container/Container";
@@ -10,6 +11,14 @@ const SuperheroesPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [superheroes, setSuperheroes] = useState<SuperheroData[]>([]);
   const heroesListRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/superheroes")
+      .then((response) => setSuperheroes(response.data));
+  }, []);
+
+  console.log(superheroes);
 
   const handlePageChange = (page: number): void => {
     setCurrentPage(page);
