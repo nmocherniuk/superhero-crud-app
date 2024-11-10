@@ -1,0 +1,40 @@
+.background {
+  background: linear-gradient(to left, #1d0e2e, #000000);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #f2f2f2;
+  letter-spacing: 1.5px;
+  font-family: "Marvel";
+  text-transform: uppercase;
+  font-size: 35px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  font-size: 14px;
+  color: #bababa;
+  max-width: 520px;
+}

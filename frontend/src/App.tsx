@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/Home/Home";
-import ErrorPage from "./pages/Error";
+import ErrorPage from "./pages/Error/Error";
 import RootLayout from "./pages/Root";
 import SuperheroesPage from "./pages/Superheroes/Superheroes";
 import NewSuperheroPage from "./pages/NewSuperhero/NewSuperhero";
