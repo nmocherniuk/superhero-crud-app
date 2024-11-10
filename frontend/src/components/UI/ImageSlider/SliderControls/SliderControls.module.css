@@ -1,0 +1,27 @@
+.img-slider-btn {
+  all: unset;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out;
+}
+
+.img-slider-btn > * {
+  fill: rgb(34, 34, 34);
+  width: 2rem;
+  height: 2rem;
+}
+
+.img-slider-btn:focus-visible {
+  outline: auto;
+}
+
+@media not (prefers-reduced-motion) {
+  .img-slider-btn:hover > *,
+  .img-slider-btn:focus-visible > * {
+    scale: 1.1;
+  }
+}
