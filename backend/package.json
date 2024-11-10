@@ -2,13 +2,21 @@
   "name": "superhero-backend",
   "version": "1.0.0",
   "description": "A backend API for managing superhero data, including CRUD operations for superhero profiles with details, powers, and images.",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "author": "Nazar Mocherniuk",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.1"
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.5",
+    "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }

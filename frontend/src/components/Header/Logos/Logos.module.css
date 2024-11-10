@@ -1,0 +1,16 @@
+.logos-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 20;
+}
+
+.marvel-logo {
+  height: 29px;
+  width: 64px;
+}
+
+.dc-logo {
+  height: 35px;
+  width: 35px;
+}

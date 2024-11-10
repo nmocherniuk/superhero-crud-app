@@ -1,0 +1,33 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 23px;
+}
+
+.label {
+  color: #f2f2f2;
+  font-family: "Bangers";
+  margin-bottom: 8px;
+}
+
+.input,
+.textarea {
+  background: transparent;
+  outline: none;
+  border: 1px solid #7c7a7a;
+  border-radius: 2px;
+  height: 38px;
+  padding: 5px;
+  color: #e0e0e0;
+  font-size: 16px;
+}
+
+.textarea {
+  resize: none;
+  height: 120px;
+}
+
+.image-input {
+  border: none;
+  align-self: flex-start;
+}

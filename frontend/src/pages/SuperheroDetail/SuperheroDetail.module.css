@@ -1,0 +1,46 @@
+.background {
+  background: linear-gradient(to right, #00312f, #000c19);
+  min-height: 100vh;
+}
+
+.content {
+  padding-bottom: 35px;
+}
+
+.title {
+  font-family: "Bangers";
+  color: #f2f2f2;
+  font-size: 45px;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 20px 0px 12px 0px;
+  word-wrap: break-word;
+}
+
+.subtitle {
+  color: #bababa;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-bottom: 40px;
+  }
+
+  .buttons-container {
+    margin-top: auto;
+    width: 100%;
+    justify-content: flex-end;
+    padding-bottom: 0px;
+    gap: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-detail-subtitle {
+    margin-bottom: 45px;
+  }
+}
