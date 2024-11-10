@@ -1,0 +1,30 @@
+.hero-profile {
+  padding: 20px;
+  border-radius: 2px;
+  background-color: rgba(4, 0, 0, 0.488);
+}
+
+@media (min-width: 768px) {
+  .hero-profile {
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    max-height: 650px;
+  }
+
+  .form {
+    display: grid;
+    column-gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form > div:nth-child(1),
+  .form > div:nth-child(2) {
+    grid-column: span 1;
+  }
+
+  .form > div:nth-child(n + 3) {
+    grid-column: span 2;
+  }
+}
