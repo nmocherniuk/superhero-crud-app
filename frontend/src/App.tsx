@@ -1,11 +1,12 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/Home";
+import HomePage from "./pages/Home/Home";
 import ErrorPage from "./pages/Error";
 import RootLayout from "./pages/Root";
-import SuperheroesPage from "./pages/Superheroes";
-import NewSuperheroPage from "./pages/NewSuperhero";
-import SuperheroDetailPage from "./pages/SuperheroDetail";
+import SuperheroesPage from "./pages/Superheroes/Superheroes";
+import NewSuperheroPage from "./pages/NewSuperhero/NewSuperhero";
+import SuperheroDetailPage from "./pages/SuperheroDetail/SuperheroDetail";
+import { ModalProvider } from "./store/ModalContext";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
 ]);
 
 const App: React.FC = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <ModalProvider>
+      <RouterProvider router={router} />
+    </ModalProvider>
+  );
 };
 export default App;
