@@ -46,10 +46,7 @@ const Input: React.FC<InputProps> = ({
           onChange={onChange}
           id={id}
           name={id}
-          className={`${classes.input} ${
-            type === "file" ? classes["image-input"] : ""
-          }`}
-          multiple={type === "file"}
+          className={classes.input}
         />
       )}
     </div>
