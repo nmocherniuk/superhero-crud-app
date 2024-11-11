@@ -3,14 +3,14 @@
 
 @font-face {
   font-family: "Bangers";
-  src: url("./assets/fonts/Bangers/Bangers.ttf") format("ttf");
+  src: url("./assets/fonts/Bangers/Bangers.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Marvel";
-  src: url("./assets/fonts/Marvel/Marvel-Regular.ttf") format("ttf");
+  src: url("./assets/fonts/Marvel/Marvel-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
