@@ -7,7 +7,7 @@ router.get("/superheroes", async (req, res, next) => {
   res.json(listOfSuperheroes);
 });
 
-router.post("/superheroes", async (req, res, next) => {
+router.post("/new-superhero", async (req, res, next) => {
   const superheroes = req.body;
   await Superheroes.create(superheroes);
   res.json(superheroes);
