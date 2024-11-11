@@ -1,5 +1,4 @@
 .superhero-list-item {
-  color: #f2f2f2;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -7,7 +6,12 @@
   width: 100%;
   max-width: 410px;
   background-color: #040404;
+}
+
+.superhero-list-item > a {
   padding: 8px;
+  color: #f2f2f2;
+  text-decoration: none;
 }
 
 .superhero-image {
