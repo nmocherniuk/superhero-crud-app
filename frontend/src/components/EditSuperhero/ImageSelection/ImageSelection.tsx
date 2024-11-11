@@ -34,27 +34,6 @@ const ImageSelection: React.FC<ImageSelectionProps> = ({
         ))}
       </div>
     </article>
-
-    // <article className={classes["image-article"]}>
-    //   <h4>Images</h4>
-    //   <span>
-    //     Selected for deletion {selectedImages.length}{" "}
-    //     {selectedImages.length > 1 ? "images" : "image"}
-    //   </span>
-    //   <div className={classes["container-images"]}>
-    //     {images.map((image) => (
-    //       <div
-    //         key={image.id}
-    //         className={`${classes["image-item"]} ${
-    //           selectedImages.includes(image.id) ? classes["selected-image"] : ""
-    //         }`}
-    //         onClick={() => onSelectImage(image.id)}
-    //       >
-    //         <img src={image.url} alt={image.alt} className={classes.image} />
-    //       </div>
-    //     ))}
-    //   </div>
-    // </article>
   );
 };
 
