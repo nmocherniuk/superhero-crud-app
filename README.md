@@ -46,7 +46,7 @@ A Superhero consists of:
 ### Steps to run the backend:
 1. Clone the repository to your local machine:
     ```bash
-    https://github.com/nmocherniuk/superhero-crud-app.git
+    git clone https://github.com/nmocherniuk/superhero-crud-app.git
     cd superhero-crud-app
     ```
 
