@@ -21,9 +21,10 @@ const SuperheroesList = forwardRef<HTMLDivElement, SuperheroesListProps>(
     return (
       <div className={classes["superheroes-list-container"]} ref={ref}>
         <ul className={classes["superheroes-list"]}>
-          {getPagedHeroes().map((heroData: SuperheroData) => (
+          {getPagedHeroes().map((heroData: SuperheroData, index: number) => (
             <SuperheroItem
-              index={heroData.id}
+              id={heroData.id}
+              index={index}
               key={heroData.id}
               nickname={heroData.nickname}
               imgSrc={heroData.images[0].url}
