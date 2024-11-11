@@ -32,6 +32,21 @@ router.put("/superheroes/edit/:id", async (req, res, next) => {
   }
 });
 
+router.delete("/superheroes/:id", async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const superhero = await Superheroes.findByPk(id);
+
+    if (!superhero) {
+      return res.status(404).json({ message: "Superhero not found" });
+    }
+
+    await superhero.destroy();
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
 router.post("/new-superhero", async (req, res, next) => {
   const superheroes = req.body;
   await Superheroes.create(superheroes);

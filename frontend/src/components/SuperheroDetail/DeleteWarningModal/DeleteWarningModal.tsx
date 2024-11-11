@@ -5,15 +5,21 @@ import ActionButtons from "../../UI/ActionButtons/ActionButtons";
 import classes from "./DeleteWarningModal.module.css";
 import { useModal } from "../../../store/ModalContext";
 import { ActionButton } from "../../../types";
+import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 
 const DeleteWarningModal: React.FC = () => {
   const { closeModal } = useModal();
-
+  const { superheroId } = useParams();
+  const navigate = useNavigate();
   const handleCancelDelete = () => {
     closeModal();
   };
 
-  const handleConfirmDelete = () => {};
+  const handleConfirmDelete = () => {
+    axios.delete(`http://localhost:3001/superheroes/${superheroId}`);
+    navigate("/superheroes");
+  };
 
   const buttons: ActionButton[] = [
     {
