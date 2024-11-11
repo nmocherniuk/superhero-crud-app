@@ -18,6 +18,7 @@ const DeleteWarningModal: React.FC = () => {
 
   const handleConfirmDelete = () => {
     axios.delete(`http://localhost:3001/superheroes/${superheroId}`);
+    closeModal();
     navigate("/superheroes");
   };
 
