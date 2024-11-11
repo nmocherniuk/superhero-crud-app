@@ -6,6 +6,7 @@ import classes from "./ImageSlider.module.css";
 
 type ImageSliderProps = {
   images: {
+    id: number;
     url: string;
     alt: string;
   }[];
@@ -46,7 +47,7 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
       <div className={classes["images-container"]}>
         {images.map(({ url, alt }, index) => (
           <img
-            key={alt}
+            key={index}
             src={url}
             alt={alt}
             className={classes["img-slider-img"]}

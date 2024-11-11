@@ -9,13 +9,12 @@ import { useModal } from "../../../store/ModalContext";
 import classes from "./SuperheroProfile.module.css";
 
 interface SuperheroProfileProps {
-  superheroData: SuperheroData | null;
+  superheroData: SuperheroData;
 }
 
 const SuperheroProfile: React.FC<SuperheroProfileProps> = ({
   superheroData,
 }) => {
-  const [superheroDetail, setSuperheroData] = useState(superheroData);
   const navigate = useNavigate();
   const { isModalOpen, openModal } = useModal();
 
@@ -24,7 +23,7 @@ const SuperheroProfile: React.FC<SuperheroProfileProps> = ({
   };
 
   const handleEdit = () => {
-    navigate("/superheroes/edit/1");
+    navigate(`/superheroes/edit/${superheroData.id}`);
   };
 
   const buttons: ActionButton[] = [
@@ -45,15 +44,15 @@ const SuperheroProfile: React.FC<SuperheroProfileProps> = ({
   ];
 
   const superheroAttributes = [
-    { label: "Nickname", value: superheroData?.nickname },
-    { label: "Real Name", value: superheroData?.real_name },
+    { label: "Nickname", value: superheroData.nickname },
+    { label: "Real Name", value: superheroData.real_name },
     {
       label: "Origin",
       value: superheroData?.origin_description,
       textArea: true,
     },
-    { label: "Superpowers", value: superheroData?.superpowers },
-    { label: "Catchphrase", value: superheroData?.catch_phrase },
+    { label: "Superpowers", value: superheroData.superpowers },
+    { label: "Catchphrase", value: superheroData.catch_phrase },
   ];
 
   return (
@@ -65,7 +64,7 @@ const SuperheroProfile: React.FC<SuperheroProfileProps> = ({
         className={classes["hero-profile"]}
       >
         <div className={classes["hero-image"]}>
-          {/* <ImageSlider images={superheroDetail?.images} /> */}
+          <ImageSlider images={superheroData.images} />
         </div>
         <div className={classes["hero-details"]}>
           {superheroAttributes.map((attribute) => (
