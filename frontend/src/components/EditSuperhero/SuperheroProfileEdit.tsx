@@ -6,13 +6,14 @@ import ActionButtons from "../UI/ActionButtons/ActionButtons";
 import { useNavigate } from "react-router-dom";
 import ImageSelection from "./ImageSelection/ImageSelection";
 import classes from "./SuperheroProfileEdit.module.css";
+import axios from "axios";
 
 interface SuperheroProfileEditProps {
-  initialData: SuperheroData | null;
+  data: SuperheroData | null;
 }
 
 const SuperheroProfileEdit: React.FC<SuperheroProfileEditProps> = ({
-  initialData,
+  data,
 }) => {
   const [selectedImages, setSelectedImages] = useState<number[]>([]);
   const [superheroData, setSuperheroData] = useState<SuperheroData>({
@@ -28,8 +29,10 @@ const SuperheroProfileEdit: React.FC<SuperheroProfileEditProps> = ({
   const navigate = useNavigate();
 
   useEffect(() => {
-    // setSuperheroData({ ...superheroData, ...data });
-  }, []);
+    if (data) {
+      setSuperheroData({ ...data });
+    }
+  }, [data]);
 
   const handleSelectImage = (id: number): void => {
     if (selectedImages.includes(id)) {
@@ -40,15 +43,8 @@ const SuperheroProfileEdit: React.FC<SuperheroProfileEditProps> = ({
   };
 
   const handleCancelEdit = (): void => {
-    navigate("/superheroes/1");
+    navigate(`/superheroes/${data?.id}`);
   };
-
-  useEffect(() => {
-    if (selectedImages.length > 0) {
-      // data = { ...data, ...superheroData };
-      navigate("/superheroes/1");
-    }
-  }, [superheroData.images]);
 
   const handleUpdate = (e: FormEvent): void => {
     e.preventDefault();
@@ -56,14 +52,13 @@ const SuperheroProfileEdit: React.FC<SuperheroProfileEditProps> = ({
     const updatedImages = superheroData.images.filter(
       (image) => !selectedImages.includes(image.id)
     );
+    if (updatedImages.length === 0 && selectedImages.length > 0) return;
 
-    setSuperheroData((prevData) => ({
-      ...prevData,
-      images: updatedImages,
-    }));
+    const updatedData = { ...superheroData, images: updatedImages };
 
-    // data = { ...data, ...superheroData };
-    navigate("/superheroes/1");
+    axios
+      .put(`http://localhost:3001/superheroes/edit/${data?.id}`, updatedData)
+      .then((response) => navigate(`/superheroes/${data?.id}`));
   };
 
   const buttons: ActionButton[] = [
@@ -79,7 +74,7 @@ const SuperheroProfileEdit: React.FC<SuperheroProfileEditProps> = ({
       onClick: handleUpdate,
       bgColor: "white",
       color: "black",
-      type: "button",
+      type: "submit",
     },
   ];
 
@@ -106,12 +101,18 @@ const SuperheroProfileEdit: React.FC<SuperheroProfileEditProps> = ({
       textArea: true,
       key: "origin_description",
     },
-    {
-      label: "Add more Images",
-      key: "images",
-      type: "file",
-    },
   ];
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target;
+
+    setSuperheroData({
+      ...superheroData,
+      [id]: value,
+    });
+  };
 
   return (
     <m.div
@@ -130,16 +131,11 @@ const SuperheroProfileEdit: React.FC<SuperheroProfileEditProps> = ({
           <Input
             key={detail.label}
             label={detail.label}
-            id={detail.label}
+            id={detail.key}
             type={detail.type}
             isTextArea={detail.textArea}
             inputValue={detail.value}
-            onChange={(e) =>
-              setSuperheroData({
-                ...superheroData,
-                [detail.key]: e.target.value,
-              })
-            }
+            onChange={handleInputChange}
           />
         ))}
         <ActionButtons buttons={buttons} />

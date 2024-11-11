@@ -54,7 +54,7 @@ const AddHeroForm: React.FC = () => {
     if (id === "images") {
       const images = value.split(",").map((url, index) => ({
         url: url.trim(),
-        id: index,
+        id: Math.random(),
         alt: `Superhero Image ${index + 1}`,
       }));
       setFormValues({

@@ -6,8 +6,8 @@ import RootLayout from "./pages/Root";
 import SuperheroesPage from "./pages/Superheroes/Superheroes";
 import NewSuperheroPage from "./pages/NewSuperhero/NewSuperhero";
 import SuperheroDetailPage from "./pages/SuperheroDetail/SuperheroDetail";
-import EditSuperheroPage from "./pages/EditSuperhero/EditSuperhero";
 import { ModalProvider } from "./store/ModalContext";
+import EditSuperheroPage from "./pages/EditSuperhero/EditSuperhero";
 
 const router = createBrowserRouter([
   {
